@@ -6,6 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arthur Souza | Desenvolvedor Fullstack</title>
   <style>
+    @media print {
+      header {
+        color: #000000 !important;
+        background: none !important;
+        background-color: #2c3e50;
+      }
+
+      footer {
+        page-break-before: always;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #000 !important;
+        background: none !important;
+        padding: 0.5rem;
+      }
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -50,6 +67,14 @@
       margin-bottom: 2rem;
     }
 
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -62,11 +87,52 @@
       text-align: center;
       padding: 1rem;
     }
+
+    .timeline {
+      position: relative;
+      margin: 2rem auto;
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #2c3e50;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 1rem 0;
+      padding-left: 80px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 42px;
+      width: 25px;
+      height: 25px;
+      background: #2c3e50;
+      border-radius: 50%;
+      top: 4.4%;
+      transform: translate(-50%, -50%);
+    }
+
+    .timeline-content {
+      background: #f4f6f8;
+      border-radius: 8px;
+      width: 100%;
+    }
   </style>
 </head>
 
 <body>
   <header>
+    <img src="perfil.png" alt="Foto de perfil" class="profile-pic">
     <h1>Arthur Guilherme Carvalho de Souza</h1>
     <p>Desenvolvedor Fullstack com +10 anos de experiência</p>
   </header>
@@ -76,7 +142,7 @@
     <ul>
       <li>📞 (27) 99288-7853 (whatsapp)</li>
       <li>📧 arthur.g.c.souza@outlook.com.br</li>
-      <li>📍 Rua Itapagipe, 117 - Glória, Vila Velha-ES</li>
+      <li>📍 Vila Velha-ES</li>
     </ul>
   </section>
 
@@ -84,7 +150,8 @@
     <h2>Habilidades Técnicas</h2>
     <div class="grid">
       <div><strong>Front-end:</strong> ReactJS, Angular, Typescript, Javascript</div>
-      <div><strong>Back-end:</strong> c#, Dotnet framework, Dotnet core, Aspnet mvc, Web Forms, Aspnet web api, Aspnet core, Aspnet
+      <div><strong>Back-end:</strong> c#, Dotnet framework, Dotnet core, Aspnet mvc, Web Forms, Aspnet web api, Aspnet
+        core, Aspnet
         Identity, Windows Forms</div>
       <div><strong>Menssageria:</strong> RabbitMQ, Azure Service Bus </div>
       <div style="display: none;"><strong>Mobile:</strong> Ionic, Capacitor</div>
@@ -97,58 +164,79 @@
 
   <section class="experience">
     <h2>Experiência Profissional</h2>
-    <h3>ITIX (2018 - 2026)</h3>
-    <p>
-      Atuei como Analista Desenvolvedor pleno e sênior desde a análise de requistos até a entrega e suporte à operação,
-      com equipes e projetos de tamanhos diversos sempre seguindo
-      práticas ágeis e dashboard kanban usando principalmente Azure DevOps para o gerenciamento dos projetos e mais
-      recentemente utilizando o Jira.
-      Abaixo uma lista de atividades e tecnologias que utilizei:
-    </p>
-    <ul style="list-style-type: disc;">
-      <li>Desenvolvimento e manutenção de aplicações web frontend Angular e ReactJS;</li>
-      <li>Criação de componentes reutilizáveis, bibliotecas e manutenção de SDKs internas;</li>
-      <li>APIs RESTful e SOAP usando .net framework e dotnet core;</li>
-      <li>Arquiteturando e desenvolvendo sistemas distribuídos com utilização de docker e orquestração dos sistemas em
-        produção utilizando kubernetes e Azure Cloud;</li>
-      <li>Utilização de repositórios git remotos no azure devops e gitlabs, publicações automatizadas e contínuas com
-        pipelines de CI e CD do Azure Devops e jenkins;</li>
-      <li>
-        Desenvolvimento de sistemas distribuídos com centralização de autenticação e autorização usando <i>aspnet
-          identity</i>, <i>KeyCloak</i> e Microsoft Azure AD,
-        centralização de informações e logs usando <i>ElasticSearch</i>;
-      </li>
-      <li>Desenvolvimento usando banco de dados sql server, oracle, mysql, postgress e mongodb;</li>
-      <li>Desenvolvimento de sistemas distribuídos com comunicação assícrona via mensageria utilizando RabbitMQ e Azure
-        Service Bus;</li>
-    </ul>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
 
-    <h3>Sharepro (2013 - 2018)</h3>
-    <p>
-      Na Sharepro eu iniciei minha carreira de desenvolvedor, desde o estágio até conseguir entregar softwares sozinho.
-      Também auxiliei no treinamento e desenvolvimento
-      de outros desenvolvedores iniciantes. Atuei na criação e manutenção de aplicações modulares integradas ao
-      <i>Sharepoint on premise</i>, aplicações web, desktop,
-      pocketpc (windows 6.5), tótem digital e cloud. Também atuei por 1 ano internamente em um cliente.
-      <br>
-      Abaixo uma lista de atividades e tecnologias que utilizei:
-    </p>
-    <ul style="list-style-type: disc;">
-      <li>Desenvolvimento de aplicações web usando ASP.NET, Web Forms e Aspnet core;</li>
-      <li>Desenvolvimento de APIs RESTful e SOAP usando .net framework;</li>
-      <li>Migração e Implantação de soluções para Azure Cloud;</li>
-      <li>Desenvolvimento usando banco de dados SQL Server e C# utilizando EntityFramework, ADO.Net e dapper;</li>
-      <li>
-        Desenvolvimento de aplicações nativas para windows usando <i>Windows Forms</i> e <i>Windows Services</i>;
-      </li>
-    </ul>
+          <h3>ITIX (2018 - 2026)</h3>
+          <p>
+            Atuei como Analista Desenvolvedor pleno e sênior desde a análise de requistos até a entrega e suporte à
+            operação,
+            com equipes e projetos de tamanhos diversos sempre seguindo
+            práticas ágeis e dashboard kanban usando principalmente Azure DevOps para o gerenciamento dos projetos e
+            mais
+            recentemente utilizando o Jira.
+            Abaixo uma lista de atividades e tecnologias que utilizei:
+          </p>
+          <ul style="list-style-type: disc;">
+            <li>Desenvolvimento e manutenção de aplicações web frontend Angular e ReactJS;</li>
+            <li>Criação de componentes reutilizáveis, bibliotecas e manutenção de SDKs internas;</li>
+            <li>APIs RESTful e SOAP usando .net framework e dotnet core;</li>
+            <li>Arquiteturando e desenvolvendo sistemas distribuídos com utilização de docker e orquestração dos
+              sistemas em
+              produção utilizando kubernetes e Azure Cloud;</li>
+            <li>Utilização de repositórios git remotos no azure devops e gitlabs, publicações automatizadas e contínuas
+              com
+              pipelines de CI e CD do Azure Devops e jenkins;</li>
+            <li>
+              Desenvolvimento de sistemas distribuídos com centralização de autenticação e autorização usando <i>aspnet
+                identity</i>, <i>KeyCloak</i> e Microsoft Azure AD,
+              centralização de informações e logs usando <i>ElasticSearch</i>;
+            </li>
+            <li>Desenvolvimento usando banco de dados sql server, oracle, mysql, postgress e mongodb;</li>
+            <li>Desenvolvimento de sistemas distribuídos com comunicação assícrona via mensageria utilizando RabbitMQ e
+              Azure
+              Service Bus;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+
+          <h3>Sharepro (2013 - 2018)</h3>
+          <p>
+            Na Sharepro eu iniciei minha carreira de desenvolvedor, desde o estágio até conseguir entregar softwares
+            sozinho.
+            Também auxiliei no treinamento e desenvolvimento
+            de outros desenvolvedores iniciantes. Atuei na criação e manutenção de aplicações modulares integradas ao
+            <i>Sharepoint on premise</i>, aplicações web, desktop,
+            pocketpc (windows 6.5), tótem digital e cloud. Também atuei por 1 ano internamente em um cliente.
+            <br>
+            Abaixo uma lista de atividades e tecnologias que utilizei:
+          </p>
+          <ul style="list-style-type: disc;">
+            <li>Desenvolvimento de aplicações web usando ASP.NET, Web Forms e Aspnet core;</li>
+            <li>Desenvolvimento de APIs RESTful e SOAP usando .net framework;</li>
+            <li>Migração e Implantação de soluções para Azure Cloud;</li>
+            <li>Desenvolvimento usando banco de dados SQL Server e C# utilizando EntityFramework, ADO.Net e dapper;</li>
+            <li>
+              Desenvolvimento de aplicações nativas para windows usando <i>Windows Forms</i> e <i>Windows Services</i>;
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <section class="education">
     <h2>Educação</h2>
     <ul>
-      <li><strong>CEET Vasco Coutinho:</strong> Técnico de Informática</li>
-      <li><strong>Full Cycle:</strong> Curso Full Cycle 4.0 focado em engenharia de software, Devops e IA (Cursando)</li>
+      <li><strong>CEET Vasco Coutinho:</strong> Técnico de Informática focado em programação</li>
+      <li><strong>Full Cycle:</strong> Curso Full Cycle 4.0 focado em engenharia de software, Devops e IA (Cursando)
+      </li>
       <li><strong>Universidade Estácio de Sá:</strong> Ciência da computação (Cursando)</li>
     </ul>
   </section>
